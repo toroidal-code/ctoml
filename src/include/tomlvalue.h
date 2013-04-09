@@ -34,6 +34,7 @@ class CTomlValue {
    CTomlValue(bool val);
    CTomlValue(tm val);
    CTomlValue(CTomlValue array[], size_t len);
+   CTomlValue(long long val);
 
    size_t length() const { return length_; }
    CTomlType type() const { return type_; }
@@ -54,7 +55,7 @@ class CTomlValue {
    bool operator == (const int64_t val);
    bool operator == (const double val);
    bool operator == (const bool val);
-   bool operator == (const time_t val);   
+   //bool operator == (const time_t val);
 };
 
 #endif

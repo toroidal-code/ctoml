@@ -30,6 +30,7 @@ CTomlValue::CTomlValue(float val) : type_(TOML_FLOAT) { value_.p_float = (double
 CTomlValue::CTomlValue(double val) : type_(TOML_FLOAT) { value_.p_float = val; }
 CTomlValue::CTomlValue(bool val) : type_(TOML_BOOLEAN) { value_.p_bool = val; }
 CTomlValue::CTomlValue(tm val) : type_(TOML_DATETIME) { value_.p_time = mktime(&val); }
+CTomlValue::CTomlValue(long long val) : type_(TOML_INT) { value_.p_int = val; }
 
 CTomlValue::CTomlValue(CTomlValue array[], size_t len) : length_(len), type_(TOML_ARRAY) {
    // Copy the given array
@@ -60,7 +61,7 @@ bool CTomlValue::operator == (const double val) {
 bool CTomlValue::operator == (const bool val) {
    return type() == TOML_BOOLEAN && as_boolean() == val;
 }
-
+/*
 bool CTomlValue::operator == (const time_t val) {
    return type() == TOML_DATETIME && as_datetime() == val;
-}
+}*/
