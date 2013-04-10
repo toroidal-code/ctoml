@@ -2,4 +2,4 @@ language: cpp
 compiler:
 - clang
 - gcc
-install: make && make test
+install: make test && cd test && ./ctomltest
