@@ -5,7 +5,7 @@
 void print_toml_value(CTomlValue v, int indent = 0) {
    switch(v.type()) {
       case TOML_STRING: printf("\"%s\"", v.as_string()); break;
-      case TOML_INT: printf("%lld", v.as_64_int()); break;
+      case TOML_INT: printf("%ld", v.as_64_int()); break;
       case TOML_FLOAT: printf("%f", v.as_float()); break;
       case TOML_BOOLEAN: printf("%s", v.as_boolean() ? "true" : "false"); break;
       case TOML_DATETIME: {
