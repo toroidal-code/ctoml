@@ -59,7 +59,7 @@ bool CTomlValue::operator == (const double val) {
 }
 
 bool CTomlValue::operator == (const long long val) {
-	return type() == TOML_INT && as_int() == val;
+	return type() == TOML_INT && as_long_long() == val;
 }
 
 bool CTomlValue::operator == (const bool val) {

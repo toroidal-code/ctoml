@@ -45,6 +45,7 @@ class CTomlValue {
    double as_float() const { return value_.p_float; }
    bool as_boolean() const { return value_.p_bool; }
    time_t as_datetime() const { return value_.p_time; }
+   long long as_long_long() const { return value_.p_int; }
 
    CTomlValue *as_array() const { return value_.p_array; }
    CTomlValue as_array(int index) const { return value_.p_array[index]; }
