@@ -16,3 +16,6 @@ toml.o : $(SF)/toml.cc $(HF)/toml.h $(HF)/tomlvalue.h
 
 toml : main.o tomlvalue.o toml.o
 	$(CC) main.o tomlvalue.o toml.o -o ctoml
+
+clean :
+	rm toml.o main.o tomlvalue.o ctoml
