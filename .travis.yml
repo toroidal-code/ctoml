@@ -1,5 +1,5 @@
 language: cpp
 compiler:
 - clang
-- gcc
+#- gcc #disabled as travis's c++11 library is out of date
 script: make test && cd test && ./ctomltest
