@@ -1,4 +1,4 @@
-Ctoml
+Ctoml [![Build Status](https://travis-ci.org/toroidal-code/ctoml.png?branch=master)](https://travis-ci.org/toroidal-code/ctoml)
 =====
 
 A statically typed parser for @mojombo's TOML, written in C++11. Currently supports commit c6ea50d of the TOML spec, with a few exceptions:
