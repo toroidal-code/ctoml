@@ -58,6 +58,10 @@ bool CTomlValue::operator == (const double val) {
    return type() == TOML_FLOAT && as_float() == val;
 }
 
+bool CTomlValue::operator == (const long long val) {
+	return type() == TOML_INT && as_int() == val;
+}
+
 bool CTomlValue::operator == (const bool val) {
    return type() == TOML_BOOLEAN && as_boolean() == val;
 }
