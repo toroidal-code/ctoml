@@ -11,3 +11,6 @@ main.o : main.cc $(HF)/toml.h
 
 tomltest : main.o
 	$(CC) main.o $(BF)/tomlvalue.o $(BF)/toml.o -o ctomltest
+
+clean :
+	rm main.o ctomltest
