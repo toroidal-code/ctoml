@@ -63,6 +63,9 @@ class CToml {
    CTomlValue get(const char *key) const;
    CTomlValue get(char *key) const;
 
+   CTomlValue operator[] (const char *key) const;
+   CTomlValue operator[] (char *key) const;
+
    bool good() const { return source_file_ != NULL; }
    bool success() const { return errors_.size() == 0; }
 

@@ -277,6 +277,13 @@ CTomlValue CToml::get(char *key) const {
    return it != values_.end() ? it->second : CTomlValue();
 }
 
+CTomlValue CToml::operator[] (const char *key) const {
+	return get(const_cast<char *>(key));
+}
+
+CTomlValue CToml::operator[] (char *key) const {
+	return get(key);
+}
 
 bool CToml::from(char *str) {
    if (str == NULL) return false;
