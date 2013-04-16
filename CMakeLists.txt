@@ -12,7 +12,7 @@ if (NOT CMAKE_BUILD_TYPE)
 endif()
 
 # Some compiler flags
-SET( CMAKE_CXX_FLAGS "-std=c++0x" )
+SET( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++0x" )
 set( CMAKE_CXX_FLAGS_DEBUG "-O2 -Wall -Wextra -pedantic -g" )
 set( CMAKE_CXX_FLAGS_RELEASE "-O2 -Wall -fomit-frame-pointer -DNDEBUG" )
 set( CMAKE_CXX_FLAGS_RELWITHDEBINFO "${CMAKE_C_FLAGS_RELEASE} -g" )
