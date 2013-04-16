@@ -17,7 +17,7 @@ toml.open("example.toml");
 toml.parse();
 
 // Get the value of a key
-CTomlValue val = toml.get("potatoe.cake");
+CTomlValue val = toml.get("potatoe.cake"); //or toml["potatoe.cake"]
 
 // CTomlValues have types
 if (val.type() == TOML_STRING) {
