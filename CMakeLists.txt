@@ -20,9 +20,10 @@ set( CMAKE_CXX_FLAGS_RELWITHDEBINFO "${CMAKE_C_FLAGS_RELEASE} -g" )
 # put all the new executables into a bin folder
 SET(EXECUTABLE_OUTPUT_PATH ${PROJECT_BINARY_DIR}/bin )
 
-# ctoml static library
+# ctoml libraries
 SET( ctoml_SOURCES src/toml.cc src/tomlvalue.cc )
-ADD_LIBRARY( ctoml STATIC ${ctoml_SOURCES} )
+#ADD_LIBRARY( ctoml STATIC ${ctoml_SOURCES} )
+ADD_LIBRARY( ctoml SHARED ${ctoml_SOURCES} )
 
 # tomlparse tool
 ADD_EXECUTABLE( tomlparse src/main.cc ${ctoml_SOURCES} )
@@ -37,7 +38,7 @@ INSTALL(
 
 # Copy our *.h files to include
 IF(UNIX)
-	SET(INCLUDE_DIR /usr/include/ctoml/)
+	SET(INCLUDE_DIR /usr/local/include/ctoml/)
 ELSE(UNIX)
 	SET(INCLUDE_DIR include/)
 ENDIF(UNIX)
