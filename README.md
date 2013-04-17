@@ -51,6 +51,9 @@ The headers are installed to `/usr/local/include`, and the library to `/usr/loca
 Usually this involves either setting the env var as such `LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib`, or editing `/etc/ld.so.conf`
 and running `ldconfig`.  
 Don't forget to link against the library at compile time with `-lctoml`.
+If you would prefer to build the static version, uncomment the static line in CMakeLists.txt and comment the shared library line.
+
+Note: if you need libc++ support, you will need to compile with `CMAKE_CXX_FLAGS="-stdlib=libc++"`.
 
 
 
