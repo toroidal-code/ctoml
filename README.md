@@ -9,8 +9,8 @@ A statically typed parser for @mojombo's TOML, written in C++11. Currently suppo
 Usage
 =====
 
-```c
-#include "toml.h"
+```cxx
+#include <ctoml/toml.h>
 
 CToml toml;
 toml.open("example.toml");
@@ -36,14 +36,32 @@ for (auto key = toml.cbegin(); key != toml.cend(); ++key) {
 }
 ```
 
+Build
+=====
+
+In order to use ctoml in your own projects, you need to build and install the library:
+
+```sh
+mkdir build && cd build  # this avoids poluting the root
+cmake ..
+make
+sudo make install
+```
+The headers are installed to `/usr/local/include`, and the library to `/usr/local/lib`, so make sure these are sourced properly.  
+Usually this involves either setting the env var as such `LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib`, or editing `/etc/ld.so.conf`
+and running `ldconfig`.  
+Don't forget to link against the library at compile time with `-lctoml`.
+
+
+
 Command line tool
 =================
 
 A command line tool that parses TOML is provided (src/main.cc). It can take either a file or a single line string as input. If the parse is successful, it spews out every key and its value.
 
 ```
-./ctoml -f "path/to/file"
-./ctoml -l "single-line-TOML = 42"
+./ctomlparse -f "path/to/file"
+./ctomlparse -l "single-line-TOML = 42"
 ```
 
 Todo
