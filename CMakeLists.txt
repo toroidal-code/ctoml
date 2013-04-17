@@ -22,8 +22,8 @@ SET(EXECUTABLE_OUTPUT_PATH ${PROJECT_BINARY_DIR}/bin )
 
 # ctoml libraries
 SET( ctoml_SOURCES src/toml.cc src/tomlvalue.cc )
-#ADD_LIBRARY( ctoml STATIC ${ctoml_SOURCES} )
-ADD_LIBRARY( ctoml SHARED ${ctoml_SOURCES} )
+ADD_LIBRARY( ctoml STATIC ${ctoml_SOURCES} )
+#ADD_LIBRARY( ctoml SHARED ${ctoml_SOURCES} )
 
 # tomlparse tool
 ADD_EXECUTABLE( tomlparse src/main.cc ${ctoml_SOURCES} )
