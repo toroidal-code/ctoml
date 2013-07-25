@@ -4,6 +4,9 @@
 #include <cstdint>
 #include <ctime>
 #include <cstddef>
+#include <ostream>
+
+#define CTOML_MAX_DATE_LEN 100
 
 enum CTomlType {
    TOML_NULL, TOML_STRING, TOML_INT, TOML_FLOAT, TOML_BOOLEAN, TOML_DATETIME, TOML_ARRAY
@@ -58,7 +61,9 @@ class CTomlValue {
    bool operator == (const long long val);
    bool operator == (const bool val);
    bool operator == (const tm val);
-   
+
+   // Stream operators
+   friend std::ostream &operator << (std::ostream &out, const CTomlValue &val);
 };
 
 #endif
